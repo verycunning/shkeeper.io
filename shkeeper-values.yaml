@@ -1,0 +1,17 @@
+# General settings (you might have other settings here for other coins)
+storageClassName: local-path
+
+# Ethereum Configuration
+ethereum_shkeeper:
+  extraEnv:
+    LAST_BLOCK_LOCKED: "FALSE" # This might be related to synchronization, keep as is
+  eth_fullnode:
+    enabled: false # IMPORTANT: Disable the internal fullnode
+    mainnet: false # Set to false as Ganache is a dev/test network
+    url: http://host.docker.internal:8545 # Or your host IP if not using host.docker.internal
+  eth:
+    enabled: true # Enable Ethereum coin support
+  eth_usdt:
+    enabled: true # Enable ERC20 USDT support (if you plan to use it)
+  eth_usdc:
+    enabled: true # Enable ERC20 USDC support (if you plan to use it)
